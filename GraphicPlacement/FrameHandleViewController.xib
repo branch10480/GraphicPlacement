@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FrameHandleViewController" customModule="GraphicPlacement" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLJ-r3-Lam">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item_rotation.png" translatesAutoresizingMaskIntoConstraints="NO" id="idi-K4-oWa">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="idi-K4-oWa" secondAttribute="bottom" id="CQs-sM-Abf"/>
+                <constraint firstAttribute="trailing" secondItem="zLJ-r3-Lam" secondAttribute="trailing" id="IU6-WM-cu8"/>
+                <constraint firstItem="zLJ-r3-Lam" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SiI-iG-pS7"/>
+                <constraint firstItem="zLJ-r3-Lam" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TRH-Of-oHo"/>
+                <constraint firstAttribute="trailing" secondItem="idi-K4-oWa" secondAttribute="trailing" id="hTd-8P-sUu"/>
+                <constraint firstItem="idi-K4-oWa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iNa-0i-W6f"/>
+                <constraint firstItem="idi-K4-oWa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="m3B-Pg-td8"/>
+                <constraint firstAttribute="bottom" secondItem="zLJ-r3-Lam" secondAttribute="bottom" id="pJh-G4-pal"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="15"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+        </view>
+    </objects>
+    <resources>
+        <image name="item_rotation.png" width="15" height="15"/>
+    </resources>
+</document>
