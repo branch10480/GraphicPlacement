@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         let testScale:CGFloat = sqrt(abs(self.activeView!.transform.a * self.activeView!.transform.d - self.activeView!.transform.b * self.activeView!.transform.c))
         print("スケール : \(testScale)")
         
-        self.opFrameVC.view.bounds = CGRectMake(0, 0, self.activeView!.bounds.size.width * testScale + 16, self.activeView!.bounds.size.height * testScale + 16)
+        self.opFrameVC.view.bounds = self.getOPFrameBounds(CGRectMake(0, 0, self.activeView!.bounds.size.width * testScale, self.activeView!.bounds.size.height * testScale))
         self.opFrameVC.view.transform = CGAffineTransformConcat(CGAffineTransformIdentity, CGAffineTransformMakeRotation(radian))
         
         // つまみの位置調整
@@ -103,7 +103,6 @@ class ViewController: UIViewController {
         // 操作フレーム表示
         self.opFrameVC.view.transform = CGAffineTransformIdentity
         self.opFrameVC.view.frame = self.getOPFrameFrame(self.activeView!.frame)
-        self.opFrameVC.view.bounds = self.getOPFrameBounds(self.activeView!.frame)
         self.view.addSubview(self.opFrameVC.view)
         
         // 回転
@@ -115,7 +114,7 @@ class ViewController: UIViewController {
         let testScale:CGFloat = sqrt(abs(self.activeView!.transform.a * self.activeView!.transform.d - self.activeView!.transform.b * self.activeView!.transform.c))
         print("スケール : \(testScale)")
         
-        self.opFrameVC.view.bounds = CGRectMake(0, 0, self.activeView!.bounds.size.width * testScale + 16, self.activeView!.bounds.size.height * testScale + 16)
+        self.opFrameVC.view.bounds = self.getOPFrameBounds(CGRectMake(0, 0, self.activeView!.bounds.size.width * testScale, self.activeView!.bounds.size.height * testScale))
         self.opFrameVC.view.transform = CGAffineTransformConcat(CGAffineTransformIdentity, CGAffineTransformMakeRotation(radian))
         
         // 回転ハンドル表示
@@ -134,13 +133,35 @@ class ViewController: UIViewController {
         self.view.addSubview(self.frameHandleVC.view)
         self.view.addSubview(self.frameHandlePointVC.view)
         
-        // ドラッグ
-        if self.opFrameVC.view.gestureRecognizers?.count < 2 {
+        /** ドラッグ - 図形移動 **/
+        if self.opFrameVC.bgView.gestureRecognizers?.count < 2 {
             let grPan:UIGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.dragGesture(_:)))
             self.opFrameVC.view.addGestureRecognizer(grPan)
         }
         
-        // ドラッグ - 回転つまみ
+        /** ドラッグ - 拡大縮小 **/
+        // 右上
+        if self.opFrameVC.handleTR.gestureRecognizers?.count < 2 {
+            let grPan:UIGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.scaleDrag(_:)))
+            self.opFrameVC.handleTR.addGestureRecognizer(grPan)
+        }
+        // 右下
+        if self.opFrameVC.handleBR.gestureRecognizers?.count < 2 {
+            let grPan:UIGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.scaleDrag(_:)))
+            self.opFrameVC.handleBR.addGestureRecognizer(grPan)
+        }
+        // 左上
+        if self.opFrameVC.handleTL.gestureRecognizers?.count < 2 {
+            let grPan:UIGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.scaleDrag(_:)))
+            self.opFrameVC.handleTL.addGestureRecognizer(grPan)
+        }
+        // 左下
+        if self.opFrameVC.handleBL.gestureRecognizers?.count < 2 {
+            let grPan:UIGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.scaleDrag(_:)))
+            self.opFrameVC.handleBL.addGestureRecognizer(grPan)
+        }
+        
+        /** ドラッグ - 回転つまみ **/
         if self.frameHandlePointVC.view.gestureRecognizers?.count < 2 {
             let grPan:UIGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.rotateDrag(_:)))
             self.frameHandlePointVC.view.addGestureRecognizer(grPan)
@@ -218,12 +239,12 @@ class ViewController: UIViewController {
         
         // 回転
         let radian:CGFloat = atan2(self.activeView!.transform.b, self.activeView!.transform.a)
-        let degree:CGFloat = radian/CGFloat(M_PI/180)
-        print("回転 : \(degree)度")
+//        let degree:CGFloat = radian/CGFloat(M_PI/180)
+//        print("回転 : \(degree)度")
         
         // スケール
-        let testScale:CGFloat = sqrt(abs(self.activeView!.transform.a * self.activeView!.transform.d - self.activeView!.transform.b * self.activeView!.transform.c))
-        print("スケール : \(testScale)")
+//        let testScale:CGFloat = sqrt(abs(self.activeView!.transform.a * self.activeView!.transform.d - self.activeView!.transform.b * self.activeView!.transform.c))
+//        print("スケール : \(testScale)")
         
         let testTransform:CGAffineTransform = CGAffineTransformConcat(CGAffineTransformIdentity, CGAffineTransformMakeRotation(radian))
         self.opFrameVC.view.transform = testTransform
@@ -232,6 +253,42 @@ class ViewController: UIViewController {
             // 操作ハンドルを表示ハンドルの位置に移動させる
             self.frameHandlePointVC.view.center = self.frameHandleVC.view.center
         }
+    }
+    
+    func scaleDrag(sender:UIPanGestureRecognizer) {
+        
+        let r:CGFloat = sqrt(pow(sender.view!.center.x - self.opFrameVC.bgView!.center.x, 2) + pow(sender.view!.center.y - self.opFrameVC.bgView!.center.y, 2))
+        
+        /** スケールを求める **/
+        
+        // 移動後の点を求める
+        // 移動量
+        let point:CGPoint = sender.translationInView(self.view)
+        print(point)
+        let movedPoint:CGPoint = CGPointMake(sender.view!.center.x + point.x, sender.view!.center.y + point.y)
+        
+        // 移動後の点と、画像中心点までの距離
+        let R:CGFloat = sqrt(pow(movedPoint.x - self.opFrameVC.bgView!.center.x, 2) + pow(movedPoint.y - self.opFrameVC.bgView!.center.y, 2))
+        
+        // x軸に対する 移動前の点と画像中心点を結んだ線との角度、移動後の点と画像中心点を結んだ線との角度の差を求める
+        let theta:CGFloat = atan2(sender.view!.center.x - self.opFrameVC.bgView!.center.x, sender.view!.center.y - self.opFrameVC.bgView!.center.y) -
+atan2(movedPoint.x - self.opFrameVC.bgView!.center.x, movedPoint.y - self.opFrameVC.bgView!.center.y)
+        
+        let scale:CGFloat = R * cos(theta) / r
+        
+        // 画像にスケールを適用
+        self.activeView!.transform = CGAffineTransformScale(self.activeView!.transform, scale, scale)
+        
+        // 描画
+//        self.opFrameVC.view.bounds.size = CGSizeMake(scale * self.opFrameVC.view.bounds.size.width, scale * self.opFrameVC.view.bounds.size.height)
+        self.opFrameVC.view.bounds = self.getOPFrameBounds(self.activeView!.frame)
+        
+        print("スケール")
+        print(scale)
+        print("------------------")
+        
+        // ドラッグで移動した距離を初期化する
+        sender.setTranslation(CGPointZero, inView: self.view)
     }
 
     func onTapBGView(sender: UITapGestureRecognizer) {
@@ -301,14 +358,14 @@ class ViewController: UIViewController {
     
     func getOPFrameFrame(baseFrame:CGRect) -> CGRect {
         var rect:CGRect = baseFrame
-        rect.size = CGSizeMake(rect.size.width + 16, rect.size.height + 16)
-        rect.origin = CGPointMake(rect.origin.x - 8, rect.origin.y - 8)
+        rect.size = CGSizeMake(rect.size.width + 32, rect.size.height + 32)
+        rect.origin = CGPointMake(rect.origin.x - 16, rect.origin.y - 16)
         return rect
     }
     
     func getOPFrameBounds(baseBounds:CGRect) -> CGRect {
         var rect:CGRect = baseBounds
-        rect.size = CGSizeMake(rect.size.width + 16, rect.size.height + 16)
+        rect.size = CGSizeMake(rect.size.width + 32, rect.size.height + 32)
         rect.origin = CGPointMake(0, 0)
         return rect
     }

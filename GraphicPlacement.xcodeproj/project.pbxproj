@@ -131,6 +131,7 @@
 				TargetAttributes = {
 					7912E47E1D41A82D005D544B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = W4E5S6Y287;
 					};
 				};
 			};
@@ -299,7 +300,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GraphicPlacement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.toshi-sv.GraphicPlacement";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.grand-design.GraphicPlacement";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -313,7 +314,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GraphicPlacement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.toshi-sv.GraphicPlacement";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.grand-design.GraphicPlacement";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
