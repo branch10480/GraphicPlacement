@@ -1,26 +1,16 @@
 //
-//  OperationFrameViewController.swift
+//  ImagedViewController.swift
 //  GraphicPlacement
 //
-//  Created by ImaedaToshiharu on 2016/07/22.
-//  Copyright © 2016年 ImaedaToshiharu All rights reserved.
+//  Created by ImaedaToshiharu on 2016/07/29.
+//  Copyright © 2016年 Grand Desgin Co., Ltd. All rights reserved.
 //
 
 import UIKit
 
-class OperationFrameViewController: UIViewController {
+class ImagedViewController: UIViewController {
 
-    @IBOutlet weak var handleTL: UIView!
-    @IBOutlet weak var handleBL: UIView!
-    @IBOutlet weak var handleTR: UIView!
-    @IBOutlet weak var handleBR: UIView!
-    @IBOutlet weak var bgView: UIView!
-    
-    var r:CGFloat! = 0
-    var initTheta:CGFloat! = 0
-    
-    // 画像の中心から、拡大縮小ハンドルの中心までの初期距離
-    var distBetHandelAndImgCenter:CGFloat! = 0
+    @IBOutlet weak var myImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,5 +33,9 @@ class OperationFrameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func onTapBack(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
 }

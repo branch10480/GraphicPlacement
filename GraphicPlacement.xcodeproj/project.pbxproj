@@ -15,12 +15,22 @@
 		7912E4961D41B2B0005D544B /* butterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = 7912E4951D41B2B0005D544B /* butterfly.png */; };
 		7912E49C1D41BD39005D544B /* OperationFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912E49A1D41BD39005D544B /* OperationFrameViewController.swift */; };
 		7912E49D1D41BD39005D544B /* OperationFrameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7912E49B1D41BD39005D544B /* OperationFrameViewController.xib */; };
+		792EE2141D4B597E00E9A571 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 792EE2131D4B597E00E9A571 /* bg.png */; };
+		79AA9FEE1D4B6CF700FD09A4 /* ImagedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA9FED1D4B6CF700FD09A4 /* ImagedViewController.swift */; };
+		79B61D581D48A8FB0031D6DA /* item_rotation2.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B61D561D48A8FB0031D6DA /* item_rotation2.png */; };
+		79B61D591D48A8FB0031D6DA /* item_rotation2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B61D571D48A8FB0031D6DA /* item_rotation2@2x.png */; };
 		79C6EBC01D46DD87002A955B /* FrameHandleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6EBBE1D46DD87002A955B /* FrameHandleViewController.swift */; };
 		79C6EBC11D46DD87002A955B /* FrameHandleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C6EBBF1D46DD87002A955B /* FrameHandleViewController.xib */; };
 		79C6EBC31D4703BA002A955B /* FrameHandlePointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6EBC21D4703BA002A955B /* FrameHandlePointViewController.swift */; };
 		79C6EBC61D47173E002A955B /* item_rotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C6EBC41D47173E002A955B /* item_rotation.png */; };
 		79C6EBC71D47173E002A955B /* item_rotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C6EBC51D47173E002A955B /* item_rotation@2x.png */; };
 		79C6EBC91D472E38002A955B /* ForLayoutImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6EBC81D472E38002A955B /* ForLayoutImageView.swift */; };
+		79F84E4D1D4AE75E00E63A1E /* b_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F84E491D4AE75E00E63A1E /* b_on.png */; };
+		79F84E4E1D4AE75E00E63A1E /* b_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F84E4A1D4AE75E00E63A1E /* b_on@2x.png */; };
+		79F84E4F1D4AE75E00E63A1E /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F84E4B1D4AE75E00E63A1E /* b.png */; };
+		79F84E501D4AE75E00E63A1E /* b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F84E4C1D4AE75E00E63A1E /* b@2x.png */; };
+		79F84E521D4AE76C00E63A1E /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F84E511D4AE76C00E63A1E /* ModalViewController.swift */; };
+		79F84E541D4AE7CF00E63A1E /* TextInsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F84E531D4AE7CF00E63A1E /* TextInsertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,12 +44,22 @@
 		7912E4951D41B2B0005D544B /* butterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = butterfly.png; path = images/butterfly.png; sourceTree = "<group>"; };
 		7912E49A1D41BD39005D544B /* OperationFrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationFrameViewController.swift; sourceTree = "<group>"; };
 		7912E49B1D41BD39005D544B /* OperationFrameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperationFrameViewController.xib; sourceTree = "<group>"; };
+		792EE2131D4B597E00E9A571 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = images/bg.png; sourceTree = "<group>"; };
+		79AA9FED1D4B6CF700FD09A4 /* ImagedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagedViewController.swift; sourceTree = "<group>"; };
+		79B61D561D48A8FB0031D6DA /* item_rotation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = item_rotation2.png; path = images/item_rotation2.png; sourceTree = "<group>"; };
+		79B61D571D48A8FB0031D6DA /* item_rotation2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item_rotation2@2x.png"; path = "images/item_rotation2@2x.png"; sourceTree = "<group>"; };
 		79C6EBBE1D46DD87002A955B /* FrameHandleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameHandleViewController.swift; sourceTree = "<group>"; };
 		79C6EBBF1D46DD87002A955B /* FrameHandleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrameHandleViewController.xib; sourceTree = "<group>"; };
 		79C6EBC21D4703BA002A955B /* FrameHandlePointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameHandlePointViewController.swift; sourceTree = "<group>"; };
 		79C6EBC41D47173E002A955B /* item_rotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = item_rotation.png; path = images/item_rotation.png; sourceTree = "<group>"; };
 		79C6EBC51D47173E002A955B /* item_rotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item_rotation@2x.png"; path = "images/item_rotation@2x.png"; sourceTree = "<group>"; };
 		79C6EBC81D472E38002A955B /* ForLayoutImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForLayoutImageView.swift; sourceTree = "<group>"; };
+		79F84E491D4AE75E00E63A1E /* b_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = b_on.png; path = images/b_on.png; sourceTree = "<group>"; };
+		79F84E4A1D4AE75E00E63A1E /* b_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "b_on@2x.png"; path = "images/b_on@2x.png"; sourceTree = "<group>"; };
+		79F84E4B1D4AE75E00E63A1E /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = b.png; path = images/b.png; sourceTree = "<group>"; };
+		79F84E4C1D4AE75E00E63A1E /* b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "b@2x.png"; path = "images/b@2x.png"; sourceTree = "<group>"; };
+		79F84E511D4AE76C00E63A1E /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		79F84E531D4AE7CF00E63A1E /* TextInsertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInsertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +101,13 @@
 				7912E48E1D41A82D005D544B /* Info.plist */,
 				7912E49A1D41BD39005D544B /* OperationFrameViewController.swift */,
 				7912E49B1D41BD39005D544B /* OperationFrameViewController.xib */,
+				79F84E511D4AE76C00E63A1E /* ModalViewController.swift */,
 				79C6EBBE1D46DD87002A955B /* FrameHandleViewController.swift */,
 				79C6EBBF1D46DD87002A955B /* FrameHandleViewController.xib */,
 				79C6EBC21D4703BA002A955B /* FrameHandlePointViewController.swift */,
 				79C6EBC81D472E38002A955B /* ForLayoutImageView.swift */,
+				79F84E531D4AE7CF00E63A1E /* TextInsertViewController.swift */,
+				79AA9FED1D4B6CF700FD09A4 /* ImagedViewController.swift */,
 			);
 			path = GraphicPlacement;
 			sourceTree = "<group>";
@@ -92,9 +115,16 @@
 		7912E4941D41B29F005D544B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				792EE2131D4B597E00E9A571 /* bg.png */,
 				79C6EBC41D47173E002A955B /* item_rotation.png */,
 				79C6EBC51D47173E002A955B /* item_rotation@2x.png */,
+				79B61D561D48A8FB0031D6DA /* item_rotation2.png */,
+				79B61D571D48A8FB0031D6DA /* item_rotation2@2x.png */,
 				7912E4951D41B2B0005D544B /* butterfly.png */,
+				79F84E491D4AE75E00E63A1E /* b_on.png */,
+				79F84E4A1D4AE75E00E63A1E /* b_on@2x.png */,
+				79F84E4B1D4AE75E00E63A1E /* b.png */,
+				79F84E4C1D4AE75E00E63A1E /* b@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -160,10 +190,17 @@
 			files = (
 				7912E48D1D41A82D005D544B /* LaunchScreen.storyboard in Resources */,
 				7912E4961D41B2B0005D544B /* butterfly.png in Resources */,
+				79B61D591D48A8FB0031D6DA /* item_rotation2@2x.png in Resources */,
 				79C6EBC11D46DD87002A955B /* FrameHandleViewController.xib in Resources */,
 				7912E49D1D41BD39005D544B /* OperationFrameViewController.xib in Resources */,
+				792EE2141D4B597E00E9A571 /* bg.png in Resources */,
 				7912E48A1D41A82D005D544B /* Assets.xcassets in Resources */,
+				79F84E4E1D4AE75E00E63A1E /* b_on@2x.png in Resources */,
+				79F84E4F1D4AE75E00E63A1E /* b.png in Resources */,
+				79B61D581D48A8FB0031D6DA /* item_rotation2.png in Resources */,
 				79C6EBC61D47173E002A955B /* item_rotation.png in Resources */,
+				79F84E4D1D4AE75E00E63A1E /* b_on.png in Resources */,
+				79F84E501D4AE75E00E63A1E /* b@2x.png in Resources */,
 				7912E4881D41A82D005D544B /* Main.storyboard in Resources */,
 				79C6EBC71D47173E002A955B /* item_rotation@2x.png in Resources */,
 			);
@@ -178,10 +215,13 @@
 			files = (
 				79C6EBC91D472E38002A955B /* ForLayoutImageView.swift in Sources */,
 				79C6EBC01D46DD87002A955B /* FrameHandleViewController.swift in Sources */,
+				79F84E541D4AE7CF00E63A1E /* TextInsertViewController.swift in Sources */,
 				7912E49C1D41BD39005D544B /* OperationFrameViewController.swift in Sources */,
 				79C6EBC31D4703BA002A955B /* FrameHandlePointViewController.swift in Sources */,
+				79AA9FEE1D4B6CF700FD09A4 /* ImagedViewController.swift in Sources */,
 				7912E4851D41A82D005D544B /* ViewController.swift in Sources */,
 				7912E4831D41A82D005D544B /* AppDelegate.swift in Sources */,
+				79F84E521D4AE76C00E63A1E /* ModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
